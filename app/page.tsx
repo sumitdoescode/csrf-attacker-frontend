@@ -5,10 +5,14 @@ import axios from "axios";
 
 const page = () => {
     const logout = async () => {
-        const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/logout", {
-            withCredentials: true,
-        });
-        console.log(data);
+        try {
+            const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/api/users/logout", {
+                withCredentials: true,
+            });
+            console.log(data);
+        } catch (error: any) {
+            console.log(error.response.data);
+        }
     };
 
     useEffect(() => {
