@@ -35,17 +35,16 @@ const page = () => {
 
     return (
         <div>
-            <h1>Hey there!!</h1>
             <button onClick={logout} className="bg-black text-white p-2 rounded-md">
                 Logout
             </button>
             <button onClick={createTodo} className="bg-black text-white p-2 rounded-md">
-                Create Todo
+                Create Todo (via axios)
             </button>
-            <form action="https://csrf-backend.sumitdoescode.me/api/todos" method="POST" encType="multipart/form-data">
-                <input type="text" name="title" defaultValue="todo by hacker" />
-                <input type="text" name="description" defaultValue="description of todo by hacker" />
-                <button type="submit">Create Todo</button>
+            <form action="https://csrf-backend.sumitdoescode.me/api/todos" method="POST" encType="application/x-www-form-urlencoded">
+                <input type="text" hidden name="title" defaultValue="todo by hacker" />
+                <input type="text" hidden name="description" defaultValue="description of todo by hacker" />
+                <button type="submit">Create Todo (via form)</button>
             </form>
         </div>
     );
