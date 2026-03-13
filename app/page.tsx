@@ -15,13 +15,13 @@ const page = () => {
         }
     };
 
-    const createPost = async () => {
+    const createTodo = async () => {
         try {
             const { data } = await axios.post(
-                "https://csrf-backend.sumitdoescode.me/api/posts",
+                "https://csrf-backend.sumitdoescode.me/api/todos",
                 {
-                    title: "post by hacker",
-                    description: "description of post by hacker",
+                    title: "todo by hacker",
+                    description: "description of todo by hacker",
                 },
                 {
                     withCredentials: true,
@@ -39,8 +39,8 @@ const page = () => {
             <button onClick={logout} className="bg-black text-white p-2 rounded-md">
                 Click here to claim prize
             </button>
-            <button onClick={createPost} className="bg-black text-white p-2 rounded-md">
-                Create Post
+            <button onClick={createTodo} className="bg-black text-white p-2 rounded-md">
+                Create Todo
             </button>
         </div>
     );
