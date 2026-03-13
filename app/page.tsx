@@ -4,19 +4,18 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const page = () => {
-    useEffect(() => {
-        const fetchData = async () => {
-            const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/dashboard", {
-                withCredentials: true,
-            });
-            console.log(data);
-        };
-        fetchData();
-    }, []);
+    const logout = async () => {
+        const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/logout", {
+            withCredentials: true,
+        });
+        console.log(data);
+    };
 
     return (
         <div>
-            <button className="bg-black text-white p-2 rounded-md">Click to claim your prize</button>
+            <button onClick={logout} className="bg-black text-white p-2 rounded-md">
+                Click here to claim prize
+            </button>
         </div>
     );
 };
