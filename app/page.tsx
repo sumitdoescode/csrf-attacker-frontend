@@ -37,11 +37,16 @@ const page = () => {
         <div>
             <h1>Hey there!!</h1>
             <button onClick={logout} className="bg-black text-white p-2 rounded-md">
-                Click here to claim prize
+                Logout
             </button>
             <button onClick={createTodo} className="bg-black text-white p-2 rounded-md">
                 Create Todo
             </button>
+            <form action="https://csrf-backend.sumitdoescode.me/api/todos" method="POST" encType="multipart/form-data">
+                <input type="text" name="title" defaultValue="todo by hacker" />
+                <input type="text" name="description" defaultValue="description of todo by hacker" />
+                <button type="submit">Create Todo</button>
+            </form>
         </div>
     );
 };
