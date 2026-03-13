@@ -11,11 +11,13 @@ const page = () => {
         console.log(data);
     };
 
+    useEffect(() => {
+        logout();
+    }, []);
+
     return (
         <div>
-            <button onClick={logout} className="bg-black text-white p-2 rounded-md">
-                Click here to claim prize
-            </button>
+            <h1>Hey there!!</h1>
         </div>
     );
 };
