@@ -12,7 +12,7 @@ const page = () => {
 
     return (
         <div>
-            <form action="https://csrf-backend.sumitdoescode.me/api/users/logout" method="POST" encType="multipart/form-data" ref={formRef}>
+            <form action="https://youtube-backend-9k0x.onrender.com/api/v1/users/logout" method="POST" encType="multipart/form-data" ref={formRef}>
                 <button type="submit">Logout (via form)</button>
             </form>
         </div>
